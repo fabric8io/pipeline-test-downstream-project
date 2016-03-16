@@ -36,7 +36,7 @@
     <java.version>1.8</java.version>
     <maven.enforcer.plugin.version>1.4</maven.enforcer.plugin.version>
 
-    <pipeline.test.project.version>0.0.1</pipeline.test.project.version>
+    <pipeline.test.project.version>0.0.41</pipeline.test.project.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
