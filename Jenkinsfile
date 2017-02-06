@@ -3,10 +3,11 @@
 def dummy
 mavenNode {
   dockerNode {
+    evaluate(readTrusted 'release.groovy')
+    def pipeline = load 'release.groovy'
+
     checkout scm
     sh "git remote set-url origin git@github.com:fabric8io/pipeline-test-project.git"
-
-    def pipeline = load 'release.groovy'
 
     stage 'Stage'
     def stagedProject = pipeline.stage()
