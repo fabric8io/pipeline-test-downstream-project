@@ -39,6 +39,7 @@ def approveRelease(project){
 }
 
 def release(project){
+  echo '=========== test paolo for jrawlings ===================='
   releaseProject{
     stagedProject = project
     useGitTagForNextVersion = true

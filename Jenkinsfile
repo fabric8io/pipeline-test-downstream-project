@@ -4,8 +4,11 @@ def dummy
 mavenTemplate {
   dockerNode {
     checkout scm
+
     readTrusted 'release.groovy'
     def pipeline = load 'release.groovy'
+    
+    sh "git remote set-url origin git@github.com:fabric8io/pipeline-test-project.git"
 
     // sh "git remote set-url origin git@github.com:fabric8io/pipeline-test-project.git"
     //
