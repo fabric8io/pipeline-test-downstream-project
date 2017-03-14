@@ -3,6 +3,8 @@ def imagesBuiltByPipline() {
   return ['pipeline-test-project']
 }
 
+
+
 def externalImages(){
   return ['pipeline-test-external-image']
 }
