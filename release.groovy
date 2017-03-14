@@ -21,13 +21,14 @@ def stage(){
   }
 }
 
+
 def deploy(project){
-  //deployProject{
-  //  stagedProject = project
-  //  resourceLocation = 'target/classes/kubernetes.json'
-  //  environment = 'fabric8'
-  //}
-  echo 'unable to deploy on plain kuberentes see https://github.com/fabric8io/kubernetes-client/issues/437'
+  deployProject{
+    stagedProject = project
+    resourceLocation = 'target/classes/kubernetes.json'
+    environment = 'fabric8'
+  }
+  //echo 'unable to deploy on plain kuberentes see https://github.com/fabric8io/kubernetes-client/issues/437'
 }
 
 def approveRelease(project){
