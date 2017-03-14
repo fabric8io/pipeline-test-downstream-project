@@ -4,6 +4,7 @@ def imagesBuiltByPipline() {
 }
 
 
+
 def externalImages(){
   return ['pipeline-test-external-image']
 }
