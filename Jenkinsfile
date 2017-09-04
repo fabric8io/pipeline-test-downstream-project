@@ -9,19 +9,24 @@ mavenTemplate {
 
     sh "git remote set-url origin git@github.com:fabric8io/pipeline-test-project.git"
 
-    stage 'Stage'
-    def stagedProject = pipeline.stage()
+    def stagedProject
+    stage ('Stage'){
+      stagedProject = pipeline.stage()
+    }
+    
+    stage ('Deploy'){
+      pipeline.deploy(stagedProject)
+    }
 
-    stage 'Deploy'
-    pipeline.deploy(stagedProject)
+    stage ('Approve'){
+      pipeline.approveRelease(stagedProject)
+    }
 
-    stage 'Approve'
-    pipeline.approveRelease(stagedProject)
-
-    stage 'Website'
+    //stage 'Website'
     //pipeline.website(stagedProject)
 
-    stage 'Promote'
-    pipeline.release(stagedProject)
+    stage ('Promote'){
+      pipeline.release(stagedProject)
+    }
   }
 }
