@@ -19,7 +19,7 @@ mavenTemplate {
     pipeline.approveRelease(stagedProject)
 
     stage 'Website'
-    pipeline.website(stagedProject)
+    //pipeline.website(stagedProject)
 
     stage 'Promote'
     pipeline.release(stagedProject)
